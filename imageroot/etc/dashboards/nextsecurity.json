@@ -1,7 +1,7 @@
 {
   "__inputs": [
     {
-      "name": "DS_LOCAL_PROMETHUS",
+      "name": "DS_PROMETHEUS",
       "label": "Local Promethus",
       "description": "",
       "type": "datasource",
@@ -79,7 +79,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_LOCAL_PROMETHUS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total CPU utilization (all cores). 100% here means there is no CPU idle time at all. You can get per core usage at the _CPUs_ section and per application usage at the _Applications monitoring_ section.\n\nKeep an eye on **iowait**. If it is constantly high, your disks are a bottleneck and they slow your system down.\n\nAn important metric worth monitoring, is **softirq**. A constantly high percentage of softirq may indicate network driver issues.",
       "fill": 5,
@@ -185,7 +185,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_LOCAL_PROMETHUS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Current system load, i.e. the number of processes using CPU or waiting for system resources (usually CPU and disk). The 3 metrics refer to 1, 5 and 15 minute averages. The system calculates this once every 5 seconds.\n\nFor more information check this [Wikipedia article](https://en.wikipedia.org/wiki/Load_(computing))",
       "fill": 1,
@@ -297,7 +297,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_LOCAL_PROMETHUS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total Disk I/O, for all physical disks. You can get detailed information about each disk at the _Disks_ section and per application Disk usage at the _Applications Monitoring_ section.\n\nPhysical are all the disks that are listed in `/sys/block`, but do not exist in `/sys/devices/virtual/block`.",
       "fill": 1,
@@ -383,7 +383,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_LOCAL_PROMETHUS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Memory paged from/to disk. This is usually the total disk I/O of the system.",
       "fill": 1,
@@ -426,7 +426,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "netdata_system_pgpgio_KiB_persec_average",
@@ -488,7 +488,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_LOCAL_PROMETHUS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "System Random Access Memory (i.e. physical memory) usage.",
       "fill": 5,
@@ -592,7 +592,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "System swap memory usage. Swap space is used when the amount of physical memory (RAM) is full. When the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space (usually a disk, a disk partition or a file).",
           "fill": 1,
@@ -696,7 +696,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_LOCAL_PROMETHUS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total IPv4 Traffic.",
       "fill": 1,
@@ -740,7 +740,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "netdata_system_ip_kilobits_persec_average",
@@ -789,7 +789,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_LOCAL_PROMETHUS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total IPv6 Traffic.",
       "fill": 1,
@@ -885,7 +885,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "System processes. **Running** are the processes in the CPU. **Blocked** are processes that are willing to enter the CPU, but they cannot, e.g. because they wait for disk activity.",
           "fill": 1,
@@ -974,7 +974,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "Number of new processes created.",
           "fill": 1,
@@ -1060,7 +1060,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "All system processes.",
           "fill": 1,
@@ -1146,7 +1146,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "[Context Switches](https://en.wikipedia.org/wiki/Context_switch), is the switching of the CPU from one process, task or thread to another. If there are many processes or threads willing to execute and very few CPU cores available to handle them, the system is making more context switching to balance the CPU resources among them. The whole process is computationally intensive. The more the context switches, the slower the system gets.",
           "fill": 1,
@@ -1246,7 +1246,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "Idle jitter is calculated by netdata. A thread is spawned that requests to sleep for a few microseconds. When the system wakes it up, it measures how many microseconds have passed. The difference between the requested and the actual duration of the sleep, is the idle jitter. This number is useful in real-time environments, where CPU jitter can affect the quality of the service (like VoIP media gateways).",
           "fill": 1,
@@ -1348,7 +1348,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "Total number of CPU interrupts. Check the system interrupts graph that gives more detail about each interrupt and also the _CPUs_ section where interrupts are analyzed per CPU core.",
           "fill": 1,
@@ -1437,7 +1437,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "CPU interrupts in detail. At the _CPUs_ section, interrupts are analyzed per CPU core.",
           "fill": 5,
@@ -1541,7 +1541,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_LOCAL_PROMETHUS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "CPU softirqs in detail. At the _CPUs_ section, softirqs are analyzed per CPU core.",
           "fill": 5,
@@ -8767,7 +8767,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "",
         "hide": 0,
@@ -8793,7 +8793,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(netdata_cpu_cpu_percentage_average, chart)",
         "hide": 0,
@@ -8819,7 +8819,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(netdata_disk_io_KiB_persec_average, family)",
         "hide": 0,
@@ -8845,7 +8845,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(netdata_disk_space_GiB_average, family)",
         "hide": 0,
@@ -8871,7 +8871,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(netdata_net_net_kilobits_persec_average, family)",
         "hide": 0,
@@ -8897,7 +8897,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "netdata_cpu_cpu_percentage_average",
         "hide": 2,
@@ -8923,7 +8923,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "",
         "hide": 0,
@@ -8949,7 +8949,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_LOCAL_PROMETHUS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "",
         "hide": 0,
