@@ -18,12 +18,28 @@
     <cv-row>
       <cv-column>
         <cv-tile light>
-          <cv-form @submit.prevent="configureModule">
+          <cv-skeleton-text
+            v-if="loading.getConfiguration || loading.getDefaults"
+            heading
+            paragraph
+            :line-count="10"
+            width="80%"
+          ></cv-skeleton-text>
+          <cv-form v-else @submit.prevent="configureModule">
+            <template v-if="!running_on_leader">
+              <NsInlineNotification
+                kind="info"
+                :title="$t('settings.grafana_must_be_installed_on_leader_node')"
+                :description="
+                  $t('settings.grafana_must_be_removed_from_a_worker_node')
+                "
+              />
+            </template>
             <cv-text-input
               :label="$t('settings.host')"
               v-model="host"
               :placeholder="$t('settings.host')"
-              :disabled="loading.getConfiguration || loading.configureModule"
+              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
               :invalid-message="error.host"
               ref="host"
             ></cv-text-input>
@@ -41,7 +57,7 @@
               value="letsEncrypt"
               :label="$t('settings.lets_encrypt')"
               v-model="lets_encrypt"
-              :disabled="loading.getConfiguration || loading.configureModule"
+              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
               class="mg-bottom"
             >
               <template slot="text-left">{{
@@ -55,7 +71,7 @@
               value="http2https"
               :label="$t('settings.http2https')"
               v-model="http2https"
-              :disabled="loading.getConfiguration || loading.configureModule"
+              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
               class="mg-bottom"
             >
               <template slot="text-left">{{
@@ -69,7 +85,7 @@
               kind="primary"
               :icon="Save20"
               :loading="loading.configureModule"
-              :disabled="loading.getConfiguration || loading.configureModule"
+              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
               >{{ $t("settings.save") }}</NsButton
             >
           </cv-form>
@@ -104,6 +120,7 @@ export default {
       host: "",
       lets_encrypt: false,
       http2https: false,
+      running_on_leader: false,
       loading: {
         getConfiguration: false,
         configureModule: false,
@@ -182,6 +199,7 @@ export default {
       this.host = config.host;
       this.http2https = config.http2https;
       this.lets_encrypt = config.lets_encrypt;
+      this.running_on_leader = config.running_on_leader;
 
       this.focusElement("host");
     },
