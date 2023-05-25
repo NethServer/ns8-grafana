@@ -39,7 +39,11 @@
               :label="$t('settings.host')"
               v-model="host"
               :placeholder="$t('settings.host')"
-              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
+              :disabled="
+                loading.getConfiguration ||
+                loading.configureModule ||
+                !running_on_leader
+              "
               :invalid-message="error.host"
               ref="host"
             ></cv-text-input>
@@ -57,7 +61,11 @@
               value="letsEncrypt"
               :label="$t('settings.lets_encrypt')"
               v-model="lets_encrypt"
-              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
+              :disabled="
+                loading.getConfiguration ||
+                loading.configureModule ||
+                !running_on_leader
+              "
               class="mg-bottom"
             >
               <template slot="text-left">{{
@@ -71,7 +79,11 @@
               value="http2https"
               :label="$t('settings.http2https')"
               v-model="http2https"
-              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
+              :disabled="
+                loading.getConfiguration ||
+                loading.configureModule ||
+                !running_on_leader
+              "
               class="mg-bottom"
             >
               <template slot="text-left">{{
@@ -85,7 +97,11 @@
               kind="primary"
               :icon="Save20"
               :loading="loading.configureModule"
-              :disabled="loading.getConfiguration || loading.configureModule || ! running_on_leader"
+              :disabled="
+                loading.getConfiguration ||
+                loading.configureModule ||
+                !running_on_leader
+              "
               >{{ $t("settings.save") }}</NsButton
             >
           </cv-form>
@@ -130,7 +146,7 @@ export default {
         configureModule: "",
         host: "",
         http2https: "",
-        lets_encrypt: ""
+        lets_encrypt: "",
       },
     };
   },
@@ -262,7 +278,7 @@ export default {
           data: {
             host: this.host,
             http2https: this.http2https,
-            lets_encrypt: this.lets_encrypt
+            lets_encrypt: this.lets_encrypt,
           },
           extra: {
             title: this.$t("settings.configure_instance", {
