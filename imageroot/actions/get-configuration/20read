@@ -22,6 +22,7 @@
 
 import sys
 import json
+import os
 
 config = {"host": "", "http2https": True, "lets_encrypt": False}
 
@@ -31,5 +32,8 @@ try:
         config = json.loads(fp.read())
 except:
     pass
+
+# grafana must run on leader
+config['running_on_leader'] = os.path.exists('/etc/nethserver/logcli.env')
 
 json.dump(config, fp=sys.stdout)
