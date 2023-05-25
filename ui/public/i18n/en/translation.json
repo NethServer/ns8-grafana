@@ -29,8 +29,8 @@
     "lets_encrypt": "Let's Encrypt certificate",
     "disabled": "Disabled",
     "enabled": "Enabled",
-    "grafana_must_be_installed_on_leader_node": "This software is supposed to run on the Leader node",
-    "grafana_must_be_removed_from_a_worker_node": "You must remove Grafana or promote to Leader this node"
+    "grafana_must_be_installed_on_leader_node": "Grafana is supposed to run on the leader node",
+    "grafana_must_be_removed_from_a_worker_node": "You should remove Grafana from the worker node and install it to the leader node"
   },
   "about": {
     "title": "About"
