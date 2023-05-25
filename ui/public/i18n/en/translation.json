@@ -28,7 +28,9 @@
     "http2https": "Redirect HTTP to HTTPS",
     "lets_encrypt": "Let's Encrypt certificate",
     "disabled": "Disabled",
-    "enabled": "Enabled"
+    "enabled": "Enabled",
+    "grafana_must_be_installed_on_leader_node": "This software is supposed to run on the Leader node",
+    "grafana_must_be_removed_from_a_worker_node": "You must remove Grafana or promote to Leader this node"
   },
   "about": {
     "title": "About"
