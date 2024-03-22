@@ -19,10 +19,10 @@
     "settings": {
         "configure_instance": "{instance} konfigurieren",
         "host": "Hostname",
-        "disabled": "Disabled",
+        "disabled": "Deaktiviert",
         "lets_encrypt": "Let's Encrypt Zertifikat",
         "save": "Speichern",
-        "enabled": "Enabled",
+        "enabled": "Aktiviert",
         "http2https": "Weiterleitung von HTTP zu HTTPS",
         "title": "Einstellungen",
         "host_pattern": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich",
