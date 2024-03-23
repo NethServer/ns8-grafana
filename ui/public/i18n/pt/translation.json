@@ -19,7 +19,9 @@
         "disabled": "Disabled",
         "save": "Save",
         "enabled": "Enabled",
-        "title": "Settings"
+        "title": "Settings",
+        "host_format": "Must be a valid fully qualified domain name",
+        "host_pattern": "Must be a valid fully qualified domain name"
     },
     "status": {
         "no_images": "No images",
