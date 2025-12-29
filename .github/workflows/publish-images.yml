@@ -20,6 +20,6 @@ jobs:
   trivy:
     needs: module
     if: ${{ needs.module.outputs.release == 'stable' || needs.module.outputs.release == 'latest' || github.event_name == 'workflow_dispatch' }}
-    uses: NethServer/ns8-github-actions/.github/workflows/scan-with-trivy.yml@v1
+    uses: NethServer/ns8-github-actions/.github/workflows/scan-with-trivy.yml@fix_release
     with:
       images: ${{ needs.module.outputs.images }}
