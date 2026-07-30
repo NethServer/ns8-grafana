@@ -113,7 +113,7 @@ export default {
         configureModule: "",
         host: "",
         http2https: "",
-        lets_encrypt: ""
+        lets_encrypt: "",
       },
     };
   },
@@ -244,7 +244,7 @@ export default {
           data: {
             host: this.host,
             http2https: this.http2https,
-            lets_encrypt: this.lets_encrypt
+            lets_encrypt: this.lets_encrypt,
           },
           extra: {
             title: this.$t("settings.configure_instance", {
