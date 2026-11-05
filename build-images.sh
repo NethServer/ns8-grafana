@@ -13,14 +13,19 @@ reponame="grafana"
 # Create a new empty container image
 container=$(buildah from scratch)
 
+# Node.js 25+ no longer ships Corepack, install it from npm
+# renovate: datasource=npm packageName=corepack
+corepack_version=0.36.0
+
 # Reuse existing nodebuilder-grafana container, to speed up builds
 if ! buildah containers --format "{{.ContainerName}}" | grep -q nodebuilder-grafana; then
     echo "Pulling NodeJS runtime..."
     buildah from --name nodebuilder-grafana -v "${PWD}:/usr/src:Z" docker.io/library/node:24.22.2-alpine
+    buildah run nodebuilder-grafana sh -c "npm install -g corepack@${corepack_version} && corepack enable"
 fi
 
 echo "Build static UI files with node..."
-buildah run --env="NODE_OPTIONS=--openssl-legacy-provider" nodebuilder-grafana sh -c "cd /usr/src/ui && corepack enable && yarn install && yarn build"
+buildah run --env="NODE_OPTIONS=--openssl-legacy-provider" nodebuilder-grafana sh -c "cd /usr/src/ui && yarn install && yarn build"
 
 # Add imageroot directory to the container image
 buildah add "${container}" imageroot /imageroot
