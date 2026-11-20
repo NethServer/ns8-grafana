@@ -1,63 +1,63 @@
 {
     "common": {
-        "required": "Required",
-        "work_in_progress": "Work in progress",
-        "processing": "Processing..."
+        "required": "Vyžadováno",
+        "work_in_progress": "Pracuje se na tom",
+        "processing": "Zpracovávání…"
     },
     "status": {
-        "name": "Name",
-        "app_volumes": "App volume | App volumes",
-        "created": "Created",
-        "size": "Size",
-        "no_images": "No images",
-        "services": "Service | Services",
-        "app_images": "App image | App images",
-        "no_services": "No services",
-        "app_instance": "App instance",
-        "mount": "Mount",
-        "title": "Status",
-        "installation_node": "Installation node",
-        "node": "Node",
-        "no_volumes": "No volumes"
+        "name": "Název",
+        "app_volumes": "Svazek aplikace | Svazky aplikací | Svazků aplikací",
+        "created": "Vytvořeno",
+        "size": "Velikost",
+        "no_images": "Žádné obrazy",
+        "services": "Služba | Služby | Služeb",
+        "app_images": "Obraz aplikace | Obrazy aplikací | Obrazů aplikací",
+        "no_services": "Žádné služby",
+        "app_instance": "Instance aplikace",
+        "mount": "Připojit",
+        "title": "Stav",
+        "installation_node": "Uzel instalace",
+        "node": "Uzel",
+        "no_volumes": "Žádné svazky"
     },
     "settings": {
-        "configure_instance": "Configure {instance}",
-        "host": "Host name",
-        "disabled": "Disabled",
-        "lets_encrypt": "Let's Encrypt certificate",
-        "host_format": "Must be a valid fully qualified domain name",
-        "save": "Save",
-        "enabled": "Enabled",
-        "http2https": "Redirect HTTP to HTTPS",
-        "host_pattern": "Must be a valid fully qualified domain name",
-        "title": "Settings"
+        "configure_instance": "Nastavit {instance}",
+        "host": "Název hostitele",
+        "disabled": "Zakázáno",
+        "lets_encrypt": "Let's Encrypt certifikát",
+        "host_format": "Je třeba, aby se jednalo o úplný doménový název (FQDN)",
+        "save": "Uložit",
+        "enabled": "Povoleno",
+        "http2https": "Přesměrovávat HTTP na HTTPS",
+        "host_pattern": "Je třeba, aby se jednalo o úplný doménový název (FQDN)",
+        "title": "Nastavení"
     },
     "about": {
-        "title": "About"
+        "title": "O aplikaci"
     },
     "action": {
-        "list-backup-repositories": "List backup repositories",
-        "get-module-info": "Get module info",
-        "list-backups": "List backups",
-        "list-installed-modules": "List installed modules",
-        "get-status": "Get status",
-        "configure-module": "Configure module",
-        "get-configuration": "Get configuration",
-        "get-name": "Get name"
+        "list-backup-repositories": "Vypsat repozitáře záloh",
+        "get-module-info": "Získat informace o modulu",
+        "list-backups": "Vypsat zálohy",
+        "list-installed-modules": "Vypsat nainstalované moduly",
+        "get-status": "Získat stav",
+        "configure-module": "Nastavit modul",
+        "get-configuration": "Získat nastavení",
+        "get-name": "Získat název"
     },
     "task": {
-        "cannot_create_task": "Cannot create task {action}"
+        "cannot_create_task": "Nebylo možné vytvořit úlohu {action}"
     },
     "error": {
-        "403": "Operation not authorized",
-        "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
-        "401": "Invalid authentication",
-        "cannot_retrieve_module_info": "Cannot retrieve module info",
-        "generic_error": "Something went wrong",
-        "error": "Error",
-        "network_timeout": "Network timeout",
-        "404": "Resource not found",
-        "network_error": "Network error",
-        "validation_error": "Validation error"
+        "403": "Chybí pověření pro operaci",
+        "cannot_retrieve_installed_modules": "Nebylo možné získat nainstalované moduly",
+        "401": "Neplatné ověření se",
+        "cannot_retrieve_module_info": "Nebylo možné získat informace o modulu",
+        "generic_error": "Něco se pokazilo",
+        "error": "Chyba",
+        "network_timeout": "Překročen časový limit sítě",
+        "404": "Prostředek nenalezen",
+        "network_error": "Chyba sítě",
+        "validation_error": "Chyba ověřování správnosti"
     }
 }
